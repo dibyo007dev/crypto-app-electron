@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, Menu} = require('electron')
 const path = require('path')
 const url = require('url')
 
@@ -12,7 +12,7 @@ function createWindow () {
 
   // and load the index.html of the app.
   win.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
+    pathname: path.join(__dirname, 'src/index.html'),
     protocol: 'file:',
     slashes: true
   }))
@@ -28,6 +28,30 @@ function createWindow () {
     win = null
   })
 }
+
+const menuTemplate = [
+    {
+        label: "File",
+        submenu: [
+              {
+                label: 'TODO'
+              },
+              {
+                  label: "suMenu1",
+                  click() {
+                    app.quit()
+                  }
+              },
+              {
+                  label: "suMenu2",
+                  submenu: [{role: 'TODO'}]
+              }]
+    }
+];
+
+const menu = Menu.buildFromTemplate(menuTemplate)
+Menu.setApplicationMenu(menu)
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

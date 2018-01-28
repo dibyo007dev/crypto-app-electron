@@ -2,7 +2,7 @@
   "name": "native-crypto-app",
   "version": "1.0.0",
   "description": "crypto currency status updates",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
