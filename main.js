@@ -29,27 +29,28 @@ function createWindow () {
   })
 }
 
-const menuTemplate = [
-    {
-        label: "File",
-        submenu: [
-              {
-                label: 'suMenu0'
-              },
-              {
-                  label: "suMenu1",
-                  click() {
-                    app.quit()
-                  }
-              },
-              {
-                  label: "suMenu2",
-              }]
-    }
-];
+            // Menu template causing problem - improve when making app more resilient
+// const menuTemplate = [
+//     {
+//         label: "File",
+//         submenu: [
+//               {
+//                 label: 'suMenu0'
+//               },
+//               {
+//                   label: "suMenu1",
+//                   click() {
+//                     app.quit()
+//                   }
+//               },
+//               {
+//                   label: "suMenu2",
+//               }]
+//     }
+// ];
 
-const menu = Menu.buildFromTemplate(menuTemplate)
-Menu.setApplicationMenu(menu)
+// const menu = Menu.buildFromTemplate(menuTemplate)
+// Menu.setApplicationMenu(menu)
 
 
 // This method will be called when Electron has finished
