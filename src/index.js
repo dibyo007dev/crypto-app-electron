@@ -1,20 +1,20 @@
-const rateApiCall = 'https://api.coinmarketcap.com/v1/ticker/?limit=10';
-
-var httpRequest = new XMLHttpRequest;
 
 
-httpRequest.onreadystatechange = getRates;
+var httpindexRequest = new XMLHttpRequest;
 
-httpRequest.open('GET', 'https://api.coinmarketcap.com/v1/ticker/?limit=10', true);
 
-httpRequest.send();
+httpindexRequest.onreadystatechange = getRates;
+
+httpindexRequest.open('GET', 'https://api.coinmarketcap.com/v1/ticker/?start=0&limit=10', true);
+
+httpindexRequest.send();
 
 function getRates() {
-    if (httpRequest.readyState === XMLHttpRequest.DONE) {
-      if (httpRequest.status === 200) {
-      	var myJson = JSON.parse(httpRequest.responseText);
+    if (httpindexRequest.readyState === XMLHttpRequest.DONE) {
+      if (httpindexRequest.status === 200) {
+      	var myJson = JSON.parse(httpindexRequest.responseText);
 
-        console.log(myJson);
+      // console.log(myJson);
       // document.getElementById('demo-showcase').innerHTML = JSON.stringify(myJson[1]['name']);
       	
       // console.log(JSON.stringify(myJson[1]['name']));
@@ -26,6 +26,9 @@ function getRates() {
       //console.log(myJson[i]['name']);
     		
     		document.getElementsByClassName('rank')[i].innerHTML = myJson[i]['name'];
+    		document.getElementsByClassName('rate-store')[i].innerHTML = "$ "+myJson[i]['price_usd'];
+    		document.getElementsByClassName('last-updated')[i].innerHTML = "Last Updated : "+myJson[i]['last_updated'];
+
 
     	}
 
@@ -36,3 +39,5 @@ function getRates() {
       }
     }
   }
+
+

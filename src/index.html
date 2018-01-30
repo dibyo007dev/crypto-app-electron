@@ -8,29 +8,25 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
 
-    <title>Hello, world!</title>
+    <title>Cryptocurrency Rate Checker </title>
   </head>
   <body>
     <!-- My template -->
+    <h2 style="font-family: 'Rubik Mono One', sans-serif; margin: 2px 20%;"> CRYPTO RUSH </h2>
 
     <!-- Search Bar -->
 
-<div class="container" style="padding-bottom: 10px">
-  <div class="row">
-          <span class="mb-1" style="padding-top: 15px; padding-left: 50px "> Explore your choice :    </span>
-           <div id="custom-search-input">
-                            <div class="input-group col-md-12">
-                                <input type="text" class="  search-query form-control" placeholder="Search" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-danger" type="button">
-                                        <span class=" glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
-                            </div>
-            </div>
-  </div>
+<div class="container">
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="Search for..." id="searchText">
+      <span class="input-group-btn">
+        <button class="btn btn-search" type="button" id="searchBtn"><i class="fa fa-search fa-fw"></i> Search</button>
+      </span>
+</div>
 </div>
     
     <!-- Search Bar ends here -->
@@ -40,81 +36,81 @@
   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1 rank"></h5>
-      <small>3 days ago</small>
+      <small class="last-updated">NA</small>
     </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    <p class="mb-1 rate-store"></p>
     
   </a>
   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1 rank"></h5>
-      <small class="text-muted">3 days ago</small>
+      <small class="text-muted last-updated">NA</small>
     </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    <p class="mb-1 rate-store"></p>
     
   </a>
   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1 rank" id="rank3"></h5>
-      <small class="text-muted">3 days ago</small>
+      <small class="text-muted last-updated">NA</small>
     </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    <p class="mb-1 rate-store"></p>
     
   </a>
   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1 rank"></h5>
-      <small class="text-muted">3 days ago</small>
+      <small class="text-muted last-updated">NA</small>
     </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    <p class="mb-1 rate-store"></p>
     
   </a>
   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1 rank"></h5>
-      <small class="text-muted">3 days ago</small>
+      <small class="text-muted last-updated">NA</small>
     </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    <p class="mb-1 rate-store"></p>
     
   </a>
   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1 rank"></h5>
-      <small class="text-muted">3 days ago</small>
+      <small class="text-muted last-updated">NA</small>
     </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    <p class="mb-1 rate-store"></p>
     
   </a>
   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1 rank"></h5>
-      <small class="text-muted">3 days ago</small>
+      <small class="text-muted last-updated">NA</small>
     </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    <p class="mb-1 rate-store"></p>
     
   </a>
   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1 rank"></h5>
-      <small class="text-muted">3 days ago</small>
+      <small class="text-muted last-updated">NA</small>
     </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    <p class="mb-1 rate-store"></p>
     
   </a>
   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1 rank"></h5>
-      <small class="text-muted">3 days ago</small>
+      <small class="text-muted last-updated">NA</small>
     </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    <p class="mb-1 rate-store"></p>
     
   </a>
   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1 rank"></h5>
-      <small class="text-muted">3 days ago</small>
+      <small class="text-muted last-updated">NA</small>
     </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    <p class="mb-1 rate-store"></p>
     
   </a>
 </div>
@@ -126,6 +122,7 @@
     <!-- Optional JavaScript -->
 
     <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="search_name.js"></script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
