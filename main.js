@@ -34,7 +34,7 @@ const menuTemplate = [
         label: "File",
         submenu: [
               {
-                label: 'TODO'
+                label: 'suMenu0'
               },
               {
                   label: "suMenu1",
@@ -44,7 +44,6 @@ const menuTemplate = [
               },
               {
                   label: "suMenu2",
-                  submenu: [{role: 'TODO'}]
               }]
     }
 ];
