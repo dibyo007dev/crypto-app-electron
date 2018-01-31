@@ -1,11 +1,11 @@
-
+const rateApiCall = 'https://api.coinmarketcap.com/v1/ticker/?start=0&limit=10';
 
 var httpindexRequest = new XMLHttpRequest;
 
 
 httpindexRequest.onreadystatechange = getRates;
 
-httpindexRequest.open('GET', 'https://api.coinmarketcap.com/v1/ticker/?start=0&limit=10', true);
+httpindexRequest.open('GET', rateApiCall, true);
 
 httpindexRequest.send();
 
