@@ -56,7 +56,7 @@ searchBtn.addEventListener('click', function callForSearch(event) {
 		})
 		win.loadURL(modalPath)
 		win.show()
-		win.webContents.openDevTools()		// Open Dev tools
+		// win.webContents.openDevTools()		// Open Dev tools
 		
 		// console.log("Test 3 ");
 
