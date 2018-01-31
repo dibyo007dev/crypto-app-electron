@@ -5,7 +5,7 @@ var ipcMain = electron.ipcMain;
 
 var heading = document.getElementsByClassName('head')
 
-ipcMain.on('results', function(event, arg) {
+ipcMain.once('results', function (event, arg) {
     	console.log(arg)
     	// heading.innerHTML(JSON.stringify(arg));	
 

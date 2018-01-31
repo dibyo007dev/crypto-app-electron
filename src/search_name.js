@@ -2,7 +2,9 @@ const electron = require('electron')
 const path = require('path')
 const browserWindow = electron.remote.BrowserWindow
 var ipcMain = electron.ipcMain
-let ipcRenderer = electron.ipcRenderer
+
+var ipcRenderer = electron.ipcRenderer
+
 
 
 const searchBtn = document.getElementById('searchBtn');
@@ -16,9 +18,11 @@ httpindexRequest.open('GET', 'https://api.coinmarketcap.com/v1/ticker/?start=0&l
 
 httpindexRequest.send();
 
+// Compares the searchfeild with the list of top 10 objects
+
 function searchLogic(searchText, searchArrayObj) {
 
-		var notFoundFlag = 1;
+		var notFoundFlag = 1;		// checks if searchText is found or not
 
 	for (var i = 0 ; i < searchArrayObj.length ; i++) {
 		
@@ -36,7 +40,7 @@ function searchLogic(searchText, searchArrayObj) {
 
 }
 
-
+// 
 
 searchBtn.addEventListener('click', function callForSearch(event) {
 
@@ -52,21 +56,33 @@ searchBtn.addEventListener('click', function callForSearch(event) {
 		})
 		win.loadURL(modalPath)
 		win.show()
-		win.webContents.openDevTools()
-		// console.log("HIiii");
-		var searchResult = searchLogic(searchText, myJson);
-		console.log(searchResult);
+		win.webContents.openDevTools()		// Open Dev tools
+		
+		// console.log("Test 3 ");
 
-		ipcRenderer.send('properties-on-board', "Hello");
+		var searchResult = searchLogic(searchText, myJson);
+
+		console.log("Name : " +searchResult['name']);
+		console.log("Total Supply : "+searchResult['total_supply']);
+		console.log("Percent Change 24h : "+searchResult['percent_change_24h']);
+		console.log("Symbol : "+searchResult['symbol']);
+
+
+//----------------------------------------------------------------------IPC rendering----------
+		// sending the search result object 
+
+		//ipcRenderer.send('properties-on-board', searchResult );	
 	}
 
-
+	//	document.getElementsByClassName('curr-name').innerHTML = searchResult['name'];
 
     
-    ipcMain.on('properties-on-board', function(event, arg) {
-    	win.webContents.send('results', arg);
+    // ipcMain.on('properties-on-board', function(event, arg) {
+    // 	console.log(arg);
 
-    })
+    // 	win.webContents.send('results', arg);
 
+    // })
+//----------------------------------------------------------  IPC Main Process transfer-----------
 
 })
