@@ -1,16 +1,18 @@
 const electron = require('electron')
 const path = require('path')
 const browserWindow = electron.remote.BrowserWindow
+var ipcMain = electron.ipcMain
+let ipcRenderer = electron.ipcRenderer
+
 
 const searchBtn = document.getElementById('searchBtn');
 
 
 var httpindexRequest = new XMLHttpRequest;
 
-
 httpindexRequest.onreadystatechange = getRates;
 
-httpindexRequest.open('GET', rateApiCall, true);
+httpindexRequest.open('GET', 'https://api.coinmarketcap.com/v1/ticker/?start=0&limit=10', true);
 
 httpindexRequest.send();
 
@@ -29,6 +31,7 @@ function searchLogic(searchText, searchArrayObj) {
 	}
 	if( notFoundFlag == 1) {
 		alert("Currency Not Found");
+		return null;
 	}
 
 }
@@ -38,19 +41,32 @@ function searchLogic(searchText, searchArrayObj) {
 searchBtn.addEventListener('click', function callForSearch(event) {
 
 	var myJson = JSON.parse(httpindexRequest.responseText);
-
-	const modalPath = path.join('file://', __dirname, 'properties.html');
-	let win = new browserWindow({ width:500, height: 800})
-	win.on('close', function(){
-		win = null;
-	})
-	win.loadURL(modalPath)
-	win.show()
-	win.webContents.openDevTools()
-
 	var searchText = document.getElementById('searchText').value;
 
-	console.log(searchText);
+	if(searchLogic(searchText, myJson) != null)
+	{
+		const modalPath = path.join('file://', __dirname, 'properties.html');
+		var win = new browserWindow({ width:500, height: 300})
+		win.on('close', function(){
+			win = null;
+		})
+		win.loadURL(modalPath)
+		win.show()
+		win.webContents.openDevTools()
+		// console.log("HIiii");
+		var searchResult = searchLogic(searchText, myJson);
+		console.log(searchResult);
 
-    var searchResult = searchLogic(searchText, myJson);
+		ipcRenderer.send('properties-on-board', "Hello");
+	}
+
+
+
+    
+    ipcMain.on('properties-on-board', function(event, arg) {
+    	win.webContents.send('results', arg);
+
+    })
+
+
 })
